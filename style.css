@@ -59,6 +59,20 @@ body {
 }
 
 /* ========== Image ========== */
+#image h2 {
+  position: absolute;
+
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  border-width: 0;
+
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 #illustration-container {
   text-align: center;
 
