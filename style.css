@@ -1,0 +1,237 @@
+/* ========== Variables ========== */
+:root {
+  /* PRIMARY */
+  /* |> Text */
+  --dark-desaturated-blue: hsl(238, 29%, 16%);
+  --soft-red: hsl(14, 88%, 65%);
+
+  /* |> Gradient */
+  --soft-violet: hsl(273, 75%, 66%);
+  --soft-blue: hsl(240, 73%, 65%);
+
+  /* NEUTRAL */
+  /* |> Card */
+  --white: hsl(0, 0%, 100%);
+
+  /* |> Text */
+  --very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --dark-grayish-blue: hsl(240, 6%, 50%);
+
+  /* |> Dividers */
+  --light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+/* ========== Reset ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+/* ========== Global ========== */
+html {
+  background: linear-gradient(var(--soft-violet), var(--soft-blue)) no-repeat;
+  min-height: 100%;
+
+  display: flex;
+  align-items: center;
+}
+
+body {
+  font: 400 0.75rem "Kumbh Sans", sans-serif;
+
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* ========== Card ========== */
+#card {
+  background: var(--white);
+  width: 87.5%;
+  max-width: 22.5rem;
+  margin: 9.25rem auto 5.25rem auto;
+  border-radius: 1.5rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25);
+}
+
+/* ========== Image ========== */
+#illustration-container {
+  text-align: center;
+
+  height: 100%;
+
+  position: relative;
+}
+
+#image #box-container #box {
+  display: none;
+}
+
+#image #illustration-container #woman {
+  position: absolute;
+  top: -6.75rem;
+  left: 50%;
+  transform: translate(-55%);
+}
+
+/* ========== FAQ ========== */
+#faq {
+  padding: 3rem 1.5rem;
+  display: grid;
+  gap: 3rem;
+}
+
+#faq h1 {
+  color: var(--dark-desaturated-blue);
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+}
+
+#faq ul li {
+  padding: 1.125rem 0;
+  border-bottom: 0.0625rem solid var(--light-grayish-blue);
+
+  display: grid;
+  grid-template-columns: 15fr 1fr;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+#faq ul li:first-child {
+  padding-top: 0;
+}
+
+/* === Question === */
+#faq ul li h2 {
+  color: var(--very-dark-grayish-blue);
+  font-weight: 400;
+  font-size: 0.75rem;
+
+  width: fit-content;
+}
+
+#faq ul li h2.active {
+  font-weight: 700;
+}
+
+#faq ul li img {
+  margin-left: auto;
+
+  transition: transform 0.3s;
+}
+
+#faq ul li img.active {
+  transform: rotate(-180deg);
+}
+
+/* == Ignore :hover styles on touch devices == */
+@media (hover: hover) and (pointer: fine) {
+  #faq ul li h2:hover {
+    color: var(--soft-red);
+
+    cursor: pointer;
+  }
+
+  #faq ul li img:hover {
+    cursor: pointer;
+  }
+}
+
+/* === Answer === */
+#faq ul li p {
+  display: none;
+}
+
+#faq ul li p.active {
+  color: var(--dark-grayish-blue);
+  font-size: 0.6875rem;
+  line-height: 1.125rem;
+
+  display: block;
+}
+
+/* ========== Responsive ========== */
+@media (min-width: 1024px) {
+  /* ========== Card ========== */
+  #card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    max-width: 57.5rem;
+    margin: 3rem auto;
+  }
+
+  /* ========== Image ========== */
+  #image {
+    position: relative;
+  }
+
+  #illustration-container {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+    overflow: hidden;
+  }
+
+  #image #box-container #box {
+    display: block;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-170%, -25%);
+    z-index: 2;
+  }
+
+  #image #illustration-container #woman {
+    content: url(./images/illustration-woman-online-desktop.svg);
+
+    position: static;
+    transform: none;
+    z-index: 1;
+
+    margin-left: -5.25rem;
+  }
+
+  #image #illustration-container #shadow {
+    content: url(./images/bg-pattern-desktop.svg);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-83.75%, -57.5%);
+  }
+
+  /* ========== FAQ ========== */
+  #faq {
+    padding: 4.5rem 5.75rem 4.5rem 0;
+  }
+
+  #faq h1 {
+    text-align: left;
+  }
+
+  #faq ul li {
+    max-width: 20rem;
+  }
+
+  #faq ul li img {
+    margin: 0;
+  }
+}
+
+/* ========== Attribution ==========
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+} */
